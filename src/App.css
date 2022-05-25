@@ -1,38 +1,436 @@
-.App {
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Open+Sans:wght@300&display=swap');
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-open-sans: 'Open Sans', sans-serif;
+}
+
+body {
+  font-family: var(--font-roboto);
+  background-color: #e0e0e0;
+}
+
+.app {
+  padding: 4rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 4rem;
+  letter-spacing: 4.9px;
+  font-family: 'koulen'
+}
+
+.search {
+  width: 71%;
+  margin: 4rem 0 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1.5rem 1.75rem;
+  border-radius: 3rem;
+  background: #1f2123;
+  -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+  box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+}
+
+.search input {
+  flex: 1;
+  border: none;
+  font-size: 1.5rem;
+  font-family: var(--font-raleway);
+  font-weight: 500;
+  padding-right: 1rem;
+
+  outline: none;
+  color: #a1a1a1;
+  background: #1f2123;
+}
+
+.search img {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+/* .search button {
+  padding: 20px 40px;
+  border-radius: 0.5rem;
+  margin-left: 15px;
+  color: #a1a1a1;
+  font-family: var(--font-raleway);
+  font-weight: 900;
+  letter-spacing: 0.75px;
+  font-size: 1.25rem;
+  cursor: pointer;
+
+  background: #1f2123;
+  -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+  box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+} */
+
+.empty {
+  width: 100%;
+  margin-top: 3rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty h2 {
+  font-size: 1.25rem;
+  color: #f9d3b4;
+  font-family: var(--font-raleway);
+}
+
+.container {
+  width: 100%;
+  margin-top: 3rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.movie {
+  width: 310px;
+  height: 460px;
+  margin: 1.5rem;
+
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: none;
+
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+}
+
+.movie div:nth-of-type(1) {
+  position: absolute;
+  padding: 16px;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+  color: #f9d3b4;
+}
+
+.movie:hover {
+  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05, 1.05);
+}
+
+.movie div:nth-of-type(2) {
+  width: 100%;
+  height: 100%;
+}
+
+.movie div:nth-of-type(2) img {
+  height: 100%;
+  width: 100%;
+}
+
+.movie div:nth-of-type(3) {
+  z-index: 2;
+  background-color: #343739;
+  padding: 16px 24px 24px 24px;
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.movie div:nth-of-type(3) span {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: #f0f0f0;
+}
+
+.movie div:nth-of-type(3) h3 {
+  margin-top: 5px;
+  font-family: "Roboto Slab", serif;
+  color: #f9d3b4;
+}
+
+.movie:hover div:nth-of-type(2) {
+  height: 100%;
+  opacity: 0.3;
+}
+
+.movie:hover div:nth-of-type(3) {
+  background-color: transparent;
+}
+
+.movie:hover div:nth-of-type(1) {
+  opacity: 1;
+}
+
+.app h2 {
+    color: #fff;
+}
+
+.MuiTableContainer-root.css-rorn0c-MuiTableContainer-root {
+    border-radius: 20px;
+    background: #e0e0e0;
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+    padding: 10px 47px;
+}
+
+.css-15wwp11-MuiTableHead-root {
+  font-family: fantasy;
+  font-size: 22px;
+}
+
+td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter.MuiTableCell-sizeMedium.css-1yhpg23-MuiTableCell-root {
+  font-family: 'open sans';
+  font-size: 18px;
+}
+
+/* ========================= signup */
+.content{
+  width: 330px;
+  border-radius: 10px;
+  padding: 40px 30px;
+  box-shadow: -3px -3px 7px #ffffff73,
+              2px 2px 5px rgba(94, 104, 121, 0.288);
+}
+
+.sign-up-text{
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 35px;
+  color: #000;
+  font-family: 'open sans';
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.content .field{
+  height: 50px;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.field input{
+  height: 100%;
+  width: 100%;
+  padding-left: 45px;
+  font-size: 18px;
+  outline: none;
+  font-family: 'Open Sans';
+  border: none;
+  color: #595959;
+  background: #e0e0e0;;
+  border-radius: 25px;
+  box-shadow: inset 2px 2px 5px #babecc,
+              inset -5px -5px 10px #ffffff73;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.field input:focus ~ label{
+  box-shadow: inset 2px 2px 5px #babecc,
+              inset -1px -1px 2px #ffffff73;
+}
+
+.field:nth-child(n-1){
+  margin-top: 20px;
+}
+
+.field span{
+  position: absolute;
+  width: 50px;
+  line-height: 50px;
+  color: #595959;
+}
+
+.field label{
+  position: absolute;
+  top: 50%;
+  left: 45px;
+  pointer-events: none;
+  color: #666666;
+  font-family: 'Open Sans';
+  transform: translateY(-50%);
+}
+
+
+.field input:focus ~ label{
+  opacity: 0;
+}
+
+button{
+  margin: 25px 0 0 0;
+  width: 100%;
+  height: 50px;
+  color: #000;
+  font-size: 18px;
+  font-weight: 600;
+  background: #e0e0e0;;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 25px;
+  box-shadow: 2px 2px 5px #babecc,
+              -5px -5px 10px #ffffff73;
+}
+
+button:focus{
+  color: #3498db;
+  box-shadow: inset 2px 2px 5px #babecc,
+              inset -5px -5px 10px #ffffff73;
+}
+p.extra-actions {
+  font-family: 'Open Sans';
+  margin-top: 20px;
+  text-align: center;
+}
+p.api-errors {
+  font-family: 'Open Sans';
+  font-size: 11px;
+  color: #e40606;
+  font-weight: bold;
+  text-align: center;
+}
+
+h2.title{
+  font-size: 28px;
+  color: #605d5d;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  text-align: center;
+  /* margin: 30px; */
+  display: inline-block;
+}
+
+button.new-contact {
+  float: right;
+  margin: auto;
+  padding: 15px;
+  color: #040f9b;
+  width: auto;
+}
+.header-title {
+  margin: 50px;
+}
+
+button.font-awe {
+  margin: 0 2px;
+  padding: 0px;
+  width: auto;
+  height: auto;
+}
+
+.contactCard {
+  display: inline-block;
+  padding: 30px;
+  font-family: 'Open Sans';
+  border-radius: 25px;
+  background: #e0e0e0;
+  box-shadow: inset 20px 20px 60px #bebebe, inset -20px -20px 60px #ffffff;
+}
+
+h2.history-header {
+  text-align: center;
+  margin: 0px 0px 50px;
+  font-family: 'Open Sans';
+  color: #5b5a5a;
+}
+
+.contactCard h3 {
+  color: #5b5a5a;
+  font-size: 22px;
+  margin: 5px 0px;
+}
+button.show-back {
+  float: right;
+  margin: auto;
+  padding: 15px;
+  color: #b90707;
+  width: auto;
+}
+.delete-container {
+  border-radius: 29px;
+  background: #e0e0e0;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  padding: 40px;
+  text-align: center;
+}
+h2.delete-header {
+  color: #575555;
+  margin: 0px 0px 36px;
+  font-family: 'Open Sans';
+}
+button.delete {
+  float: none;
+  width: 35%;
+}
+.delete-actions {
+  margin-top: 50px;
+}
+.sign-actions {
+  font-family: 'Open Sans';
+  display: inline-flex;
+  color: #000000;
+}
+a.sign-out-user {
+  margin-left: 25px;
+  color: #9e0d0d;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .app {
+    padding: 4rem 2rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .search {
+    padding: 1rem 1.75rem;
+    width: 100%;
+  }
+
+  .search input {
+    font-size: 1rem;
+  }
+
+  .search img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  .app {
+    padding: 4rem 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .container {
+    margin-top: 2rem;
+  }
+
+  .movie {
+    width: "100%";
+    margin: 1rem;
   }
 }
