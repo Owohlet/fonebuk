@@ -34,7 +34,7 @@ function NewContact() {
         ).catch(
             err => {
                 setApiError(err.response.data.errors)
-                console.log(err.response.data.errors)
+                console.log(apiError)
             }
         )
     }
@@ -48,7 +48,7 @@ function NewContact() {
             </div>
             {(apiError) ? 
             apiError.map((error)=>(
-                <p key={error["detail"]} className='api-errors'>{error["detail"]}</p>  
+                <p key={error["detail"]} className='api-errors'>{error}</p>  
             )) 
             : ""}
             <div className="field">

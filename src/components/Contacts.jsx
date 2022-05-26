@@ -47,7 +47,8 @@ function Contacts() {
                 </TableHead>
                 <TableBody>
 
-                    {contacts.map((contact)=>(
+                    { (contacts) ? 
+                    contacts.map((contact)=>(
                         <Person 
                         first_name={contact["attributes"]["first-name"]}
                         last_name={contact["attributes"]["last-name"]}
@@ -57,7 +58,10 @@ function Contacts() {
                         id={contact["id"]}
                         key={contact["id"]}
                         />
-                    ))}
+                    ))
+                    : ""
+                
+                }
                 </TableBody>
             </Table>              
         </TableContainer>
