@@ -48,7 +48,7 @@ function NewContact() {
             </div>
             {(apiError) ? 
             apiError.map((error)=>(
-                <p key={error["detail"]} className='api-errors'>{error}</p>  
+                <p key={error} className='api-errors'>{error}</p>  
             )) 
             : ""}
             <div className="field">

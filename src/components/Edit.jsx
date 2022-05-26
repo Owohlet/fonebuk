@@ -74,7 +74,7 @@ const Edit =()=> {
         ).catch(
             err => {
                 setApiError(err.response.data.errors)
-                console.log(err.response.data.errors)
+                console.log(apiError)
             }
         )
     }
@@ -86,7 +86,7 @@ const Edit =()=> {
             </div>
             {(apiError) ? 
             apiError.map((error)=>(
-                <p key={error["detail"]} className='api-errors'>{error["detail"]}</p>  
+                <p key={error} className='api-errors'>{error}</p>  
             )) 
             : ""}
             
